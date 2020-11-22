@@ -10,7 +10,7 @@ int main(){
         printf("Error: could not get the Memory block\n");
         return -1;
     }
-
+    printf("Reading: \"%s\"\n",mblock);
     //Grab the shared memory
     int size = atoi(mblock);
     char *block = attach_memory_block(FILENAME, size);
@@ -20,7 +20,7 @@ int main(){
         return -1;
     }
 
-    printf("Reading: \"%s\"\n",block);
+    printf("Reading:\n\"%s\"\n",block);
     detach_memory_block(block);
 
     return 0;

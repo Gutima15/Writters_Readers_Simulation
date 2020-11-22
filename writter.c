@@ -28,7 +28,7 @@ int main (int argc, char* argv[]){
     }
 
     printf("writting: \"%s\"\n", argv[1]);
-    strncpy(block, argv[1], size);
+    strncpy(block, argv[1], size); //hay que cambiar el block_size por el tamaño del answer y asegurarse de que esté limpio.
     detach_memory_block(block);
 
     return 0;

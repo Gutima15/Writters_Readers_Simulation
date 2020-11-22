@@ -31,21 +31,34 @@ int main (){
     }
     char answer[4];
     int ansResult= get_block_size(answer);
-    printf("This is the answer: \"%s\"\n", answer);
+
     if(ansResult == -1){
         return 0;
     }
-    printf("Memory size of: \"%s\"\n", answer);
-    strncpy(mblock, answer, BLOCK_SIZE);
+    int size= atoi(answer)*22; //Que son la cantidad de caracteres por línea " 1 23/11/2020 12:36 5\n"
+    char newAnswer[6];
+    sprintf(newAnswer,"%d",size);
+    printf("Memory size of: \"%s\"\n", newAnswer);
+    strncpy(mblock, newAnswer, BLOCK_SIZE); 
     detach_memory_block(mblock);
 
 
     //Grab the shared memory for the simulation
-    char *block = attach_memory_block(FILENAME, atoi(answer));
+    char *block = attach_memory_block(FILENAME,size); 
     if(block == NULL){
         puts("Error: could not get the block\n");
         return -1;
     }
+    for(int i = 0; i<size; i++){
+        char character[1];
+        strcpy(character,"_");
+        if((i+1)%22 == 0 && i>0){
+            strcpy(character,"\n");
+            
+        }
+        strcat(block,character);        
+    }
+    detach_memory_block(block);
     return 0;
     
  //gcc inicializador.c shared_memory.c -o init  
