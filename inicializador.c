@@ -3,7 +3,6 @@
 #include<string.h>
 #include "shared_memory.h" 
 
-
 static int get_block_size(char* answer){
     
     int validateLines = getLine("Write the number of lines that it's going to have the shared memory: ",answer,sizeof(answer));
@@ -53,6 +52,7 @@ int main (){
         char character[1];
         strcpy(character,"_");
         if((i+1)%22 == 0 && i>0){
+            printf("indice del enter: %d\n",i);
             strcpy(character,"\n");
             
         }

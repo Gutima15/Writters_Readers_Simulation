@@ -2,17 +2,8 @@
 #include <stdio.h>
 #include "shared_memory.h"
 
-// void readFromBlock(){
-//     int j = 0;
-//     char result[21]="";
-//     for(int i=0; i< (int)strlen(block); i+=22){        
-//         printf("Linea %d: %s\n", j, readLine( j, block, result));
-//         j++;
-//     }
-// }
-
 int main(){
-    
+    struct process re ={1,"","","",3,"",""};
     //Grab the size of the shared memory
     char *mblock = attach_memory_block(MEMORYFILE, BLOCK_SIZE);
     if(mblock == NULL){
@@ -29,14 +20,20 @@ int main(){
         return -1;
     }
 
-   int j = 0;
+    int j = 0;
+    // for(int i=0; i< (int)strlen(block); i+=22){
+    //     char result[21]="";
+    //     printf("Linea %d: %s\n", j, readLine( j, block, result));
+    //     if(!isLineEmpty(j,block)){
+    //         writeLine("_____________________",j,block);
+    //     }
+    //     j++;
+    // }
     char result[21]="";
-    for(int i=0; i< (int)strlen(block); i+=22){        
-        printf("Linea %d: %s\n", j, readLine( j, block, result));
-        j++;
+    printf("Linea %d: %s\n", j, readLine( j, block, result));
+    if(!isLineEmpty(j,block)){
+        writeLine("_____________________",j,block);
     }
-    //printf("Reading:\n\"%s\"\n",block);
-    
 
     detach_memory_block(block);
 

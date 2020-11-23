@@ -72,8 +72,110 @@ int getLine (char *prmpt, char *buff, size_t sz) {
     buff[strlen(buff)-1] = '\0';
     return 0;
 }
+
+bool isLineEmpty(int lineNumber, char* block){
+    if(block[(21*lineNumber)+lineNumber] == '_'){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+int getEmptyLine(char* block){
+    int j=0;   
+
+    for(int i = 0; i< (int)strlen(block);i+=22){  
+        if(block[i]=='_'){
+            return j;
+        }
+        j++;
+    }
+    return -1;
+}
+
+void writeLine(char *newText, int lineNumber, char* block){
+    int j= 0;
+    for(int i = (21*lineNumber)+lineNumber; i<21*(lineNumber+1)+lineNumber; i++){  
+        block[i] = newText[j];
+        j++;          
+    }
+}
+
+char* readLine(int lineNumber, char* block, char* result){    
+    int j = 0;
+    for(int i = (21*lineNumber)+lineNumber; i<21*(lineNumber+1)+lineNumber; i++){  
+        result[j] = block[i];
+        j++;          
+    }
+    return result;
+}
+
+void print_list(node * head) {        
+    if(head != NULL){
+        node * current = head;    
+        while (current != NULL) {
+            printf("PID: %s\t type: %s\t action: %s\t state: %s\t line number: %d\t date: %s\t time: %s",
+            current->val->PID, current->val->Type, current->val->action, current->val->state, current->val->lineNumber, current->val->date, current->val->time);
+            current = current->next;
+        }
+    }                  
+}
+
+void print_process(struct process * pr){
+    if(pr != NULL){
+        printf("PID: %s\t type: %s\t action: %s\t state: %s\t line number: %d\t date: %s\t time: %s",
+        pr->PID, pr->Type, pr->action,pr->state,pr->lineNumber,pr->date,pr->time);
+    }
+}
+
+node* push(node * head, struct process val) {
+    if(head == NULL){
+        head = (node *) malloc(sizeof(node));
+        bzero(head, sizeof(head));
+        head->val = (struct process*) malloc(sizeof(struct process));
+        bzero(head->val, sizeof(head->val));
+        head->val->PID = val.PID;
+        head->val->Type = val.Type;
+        head->val->action = val.action;
+        head->val->state = val.state;
+        head->val->lineNumber = val.lineNumber;
+        head->val->date = val.date;
+        head->val->time = val.time;
+        head->next =NULL;        
+    } else{
+        node * current = head;
+        while (current->next != NULL) {
+            current = current->next;
+        }
+        /* now we can add a new variable */
+        current->next = (node*) malloc(sizeof(node));
+        current->next->val = (struct process*) malloc(sizeof(struct process));
+        current->next->val->PID = val.PID;
+        current->next->val->Type = val.Type;
+        current->next->val->action = val.action;
+        current->next->val->state = val.state;
+        current->next->val->lineNumber = val.lineNumber;
+        current->next->val->date = val.date;
+        current->next->val->time = val.time;
+        current->next->next = NULL;
+    }
+    return head;
+}
+
+struct process *pop(node** head) {
+    struct process *retval = NULL;
+    node * next_node = NULL;
+
+    if (*head == NULL) {
+        return NULL;
+    }
+
+    next_node = (*head)->next;
+    retval = (*head)->val;
+    free(*head);
+    *head = next_node;
+
+    return retval;
+}
 //File made to simplify code
-
-
-
-
