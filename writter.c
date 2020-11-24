@@ -34,8 +34,8 @@ int main (){
         printf("Error: could not get the block\n");
         return -1;
     }
-    //Ask the number of writers from the user
     
+    //Ask the number of writers from the user
     char cantWritters[2];
     int answerCantW = getLine("Write the number of [Writers] to start the program (MAX 9):",cantWritters,sizeof(cantWritters));
     printf("value of: %s",cantWritters);
@@ -57,17 +57,27 @@ int main (){
     int cantProcess = atoi(cantWritters);
 
     for(int i=0; i< cantProcess; i++){
-        char PID[2];
-        char num[2];
+        char* PID;
+        PID = (char *) malloc(sizeof(char));
+        bzero(PID, sizeof(PID));
+        
+        char* num;
+        num = (char *) malloc(sizeof(char));
+        bzero(num, sizeof(num));
+
         strcpy(PID,"w");
-        sprintf(num,"%d",i);
+        sprintf(num,"%d",i);        
         strcat(PID,num);
         //bl, sl, ex, wt
         //PID, Type, action, state, lineNumber, date, time
-        struct process pn = {PID,"writer","write","wt",0,"          ","     "};
-        writer_queue = push(writer_queue,pn);
+        struct process pn = {PID,"writer","write","wt",0,"          ","     "};        
+        writer_queue = push(writer_queue,pn);        
+
     }
-    //print_list(writer_queue);
+    for(int i=0; i< cantProcess; i++){
+        struct process* new= pop(&writer_queue);
+        print_process(new);
+    }
     // Crear la función que usarán los threads.
     //Esta recibe como parámetro la cola
     // Detro de ella usamos writeLine y como implica acceso a memoria compartida, se usa el semáforo.

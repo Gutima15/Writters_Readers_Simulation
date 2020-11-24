@@ -113,10 +113,9 @@ char* readLine(int lineNumber, char* block, char* result){
 
 void print_list(node * head) {        
     if(head != NULL){
-        node * current = head;    
+        node * current = head;  
         while (current != NULL) {
-            printf("PID: %s\t type: %s\t action: %s\t state: %s\t line number: %d\t date: %s\t time: %s",
-            current->val->PID, current->val->Type, current->val->action, current->val->state, current->val->lineNumber, current->val->date, current->val->time);
+            print_process(current->val);
             current = current->next;
         }
     }                  
@@ -124,7 +123,7 @@ void print_list(node * head) {
 
 void print_process(struct process * pr){
     if(pr != NULL){
-        printf("PID: %s\t type: %s\t action: %s\t state: %s\t line number: %d\t date: %s\t time: %s",
+        printf("PID: %s type: %s action: %s state: %s line number: %d date: %s time: %s\n",
         pr->PID, pr->Type, pr->action,pr->state,pr->lineNumber,pr->date,pr->time);
     }
 }
@@ -142,7 +141,7 @@ node* push(node * head, struct process val) {
         head->val->lineNumber = val.lineNumber;
         head->val->date = val.date;
         head->val->time = val.time;
-        head->next =NULL;        
+        head->next = NULL;        
     } else{
         node * current = head;
         while (current->next != NULL) {
@@ -150,7 +149,9 @@ node* push(node * head, struct process val) {
         }
         /* now we can add a new variable */
         current->next = (node*) malloc(sizeof(node));
+        bzero(current->next, sizeof(current->next));
         current->next->val = (struct process*) malloc(sizeof(struct process));
+        bzero(current->next->val, sizeof(current->next->val));
         current->next->val->PID = val.PID;
         current->next->val->Type = val.Type;
         current->next->val->action = val.action;
