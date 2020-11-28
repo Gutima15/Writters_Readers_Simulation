@@ -121,6 +121,43 @@ void print_list(node * head) {
     }                  
 }
 
+void queueToString(node * head, char* result){
+    if(head != NULL){
+        node * current = head;  
+        while (current != NULL) {
+            strcat(result,current->val->PID);
+            strcat(result," ");
+            strcat(result,current->val->Type);
+            strcat(result," ");
+            strcat(result,current->val->action);
+            strcat(result," ");
+            strcat(result,current->val->state);
+            strcat(result," ");
+            char* line= "";
+            sprintf(line,"%d",current->val->lineNumber);
+            strcat(result,line);
+            strcat(result," ");
+            strcat(result,current->val->date);
+            strcat(result," ");
+            strcat(result,current->val->time);
+            strcat(result,"\n");
+            current = current->next;
+        }        
+    }  
+}
+
+void processToString(struct process *pr, char* result ){
+    strcat(result,pr->PID);
+    strcat(result," ");
+    strcat(result,pr->date);
+    strcat(result," ");
+    strcat(result,pr->time);
+    strcat(result," ");
+    char* line= "";
+    sprintf(line,"%d",pr->lineNumber);
+    strcat(result,line);
+}
+
 void print_process(struct process * pr){
     if(pr != NULL){
         printf("PID: %s type: %s action: %s state: %s line number: %d date: %s time: %s\n",

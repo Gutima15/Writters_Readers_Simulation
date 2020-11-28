@@ -21,6 +21,14 @@ struct process{
     char* date;
     char* time;
 };
+
+struct userParameters{
+    char* memoryBlock;
+    char* spyBlock;
+    int exTime;
+    int sleepTime;
+};
+
 typedef struct node {
     struct process *val;
     struct node * next;
@@ -30,6 +38,8 @@ void print_list(node * head);
 void print_process(struct process * pr);
 node*push(node * head, struct process val);
 struct process *pop(node** head);
+void queueToString(node * head, char* result);
+void processToString(struct process *pr, char* result );
 //Shared values for all programs
 #define BLOCK_SIZE 4096  //From the memory that store the real size
 #define MEMORYFILE "memorySize.c" //File en el que guardamos el valor de la memoria compatida.

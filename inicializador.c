@@ -5,7 +5,7 @@
 
 static int get_block_size(char* answer){
     
-    int validateLines = getLine("Write the number of lines that it's going to have the shared memory: ",answer,sizeof(answer));
+    int validateLines = getLine("Write the number of lines that it's going to have the shared memory: (max 9) ",answer,sizeof(answer));
     if(validateLines == 1){
         puts("You have not write anything, try again.");
         return -1;
@@ -28,7 +28,7 @@ int main (){
         puts("Error: could not get the block\n");
         return -1;
     }
-    char answer[4];
+    char answer[2];
     int ansResult= get_block_size(answer);
 
     if(ansResult == -1){
