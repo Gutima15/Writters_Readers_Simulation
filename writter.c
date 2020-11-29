@@ -34,7 +34,7 @@ void writerExecution(struct userParameters* up){
         //11/11/1121
         //PID,"writer","write","wt",0,"          ","     "
         //wait (sspy)
-        struct process *p= pop(writer_queue);
+        struct process *p= get_by_index(&writer_queue, up->index);
         char result = "";
         queueToString(writer_queue, result);
         strncpy(up->spyBlock, result, BLOCK_SIZE);
@@ -45,8 +45,10 @@ void writerExecution(struct userParameters* up){
             time_t t = time(NULL);
             struct tm tm = *localtime(&t);
             //Date modification
-            char date [10];
-            char s[4];            
+            char date = (char *) malloc(sizeof(char));
+            bzero(date,sizeof(date));
+            char s= (char *) malloc(sizeof(char));            
+            bzero(s,sizeof(s));
             sprintf(s,"%02d",(tm.tm_mday));
             strcat(date,s);
             strcat(date,"/");
@@ -57,7 +59,8 @@ void writerExecution(struct userParameters* up){
             strcat(date,s);
             strcpy(p->date,date);
             //Hour modification
-            char hour[5];
+            char hour = (char *) malloc(sizeof(char));
+            bzero(hour,sizeof(hour));
             sprintf(s,"%02d",(tm.tm_hour));
             strcat(hour,s);
             strcat(date,":");
@@ -65,13 +68,14 @@ void writerExecution(struct userParameters* up){
             strcat(hour,s);
             strcpy(p->time,hour);
             //wait del semaforo.//
-            // cambiar estado
+            strcpy(p->state,"ex");
             // ¿cómo lo ponemos en la memoria compartida del writer?
             /*lógica de escritura*/
             int emptyLine = getEmptyLine(up->memoryBlock);
             if(emptyLine != -1){
                 //obtenemos fecha
-                char proceso[22];
+                char proceso = (char *) malloc(sizeof(char));
+                bzero(proceso,sizeof(proceso));
                 processToString(p,proceso);
                 writeLine(proceso,emptyLine,up->memoryBlock);
                 //Escribe en bitácora
@@ -83,7 +87,8 @@ void writerExecution(struct userParameters* up){
             sleep(1);
             start = time(NULL);
         }
-        //Signal(sspy)
+        sleep(up->sleepTime);
+        
         // se manda a dormir... los segundos del usuario
     }
 }
@@ -150,19 +155,19 @@ int main (){
         printf("Error: could not get the block\n");
         return -1;
     }
-    struct userParameters *up = {block,spyBlock,atoi(cantWritingTime), atoi(cantSleep)};
-
-    // Crear la función que usarán los threads.
+        // Crear la función que usarán los threads.
     //Esta recibe como parámetro la cola
     // Detro de ella usamos writeLine y como implica acceso a memoria compartida, se usa el semáforo.
 
 
     /*************/
+    struct userParameters upList[cantProcess];
     pthread_t threads[cantProcess];	
     for(int i=0; i< cantProcess; i++){
-        pthread_create(&threads[i],NULL,writerExecution,up);				
-	}
-
+        struct userParameters up = {block,spyBlock,atoi(cantWritingTime), atoi(cantSleep), i};
+        upList[i] = up;
+        pthread_create(&threads[i],NULL,writerExecution,upList[i]);				
+	}    
 	for (int i = 0; i < cantProcess; i++){
         if (pthread_join(threads[i], NULL) != 0){
             fprintf(stderr, "error: Cannot join thread # %d\n", i);

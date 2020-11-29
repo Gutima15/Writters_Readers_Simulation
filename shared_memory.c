@@ -216,4 +216,25 @@ struct process *pop(node** head) {
 
     return retval;
 }
+
+struct process *get_by_index(node ** head, int n) {
+    int i = 0;
+    struct process *retval = NULL;
+    if(*head != NULL){
+        node * current = *head;
+        if (n == 0) {
+            return (*head)->val;
+        }
+
+        for (i = 0; i < n-1; i++) {
+            if (current->next == NULL) {
+                return NULL; //habia -1
+            }
+            current = current->next;
+        }
+
+        retval = current->next->val;         
+        return retval;
+    }
+}
 //File made to simplify code
