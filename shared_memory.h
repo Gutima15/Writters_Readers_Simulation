@@ -3,7 +3,7 @@
 #define SHARED_MEMORY_H
 
 #include <stdbool.h>
-
+#include<sys/ipc.h>
 char* attach_memory_block(char* filename, int size);
 bool detach_memory_block(char* block);
 bool destroy_memory_block(char* filename);
@@ -40,11 +40,14 @@ void print_process(struct process * pr);
 node*push(node * head, struct process val);
 struct process *pop(node** head);
 void queueToString(node * head, char* result);
+void processToLine(struct process *pr, char* result );
 void processToString(struct process *pr, char* result );
 struct process *get_by_index(node ** head, int n);
 //Shared values for all programs
 #define BLOCK_SIZE 4096  //From the memory that store the real size
 #define MEMORYFILE "memorySize.c" //File en el que guardamos el valor de la memoria compatida.
 #define FILENAME "shareData.c" //File con el que asociamos la memoria...
+#define SPYSEM "/myspy"
+#define WRSEM "/mywritereader"
 //File made to simplify code 
 #endif

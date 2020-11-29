@@ -133,7 +133,7 @@ void queueToString(node * head, char* result){
             strcat(result," ");
             strcat(result,current->val->state);
             strcat(result," ");
-            char* line= "";
+            char line[2];
             sprintf(line,"%d",current->val->lineNumber);
             strcat(result,line);
             strcat(result," ");
@@ -146,7 +146,7 @@ void queueToString(node * head, char* result){
     }  
 }
 
-void processToString(struct process *pr, char* result ){
+void processToLine(struct process *pr, char* result ){
     strcat(result,pr->PID);
     strcat(result," ");
     strcat(result,pr->date);
@@ -154,6 +154,22 @@ void processToString(struct process *pr, char* result ){
     strcat(result,pr->time);
     strcat(result," ");
     char* line= "";
+    sprintf(line,"%d",pr->lineNumber);
+    strcat(result,line);
+}
+
+void processToString(struct process *pr, char* result ){
+    strcat(result,pr->PID);
+    strcat(result," ");
+    strcat(result,pr->action);
+    strcat(result," ");
+    strcat(result,pr->Type);
+    strcat(result," ");
+    strcat(result,pr->date);
+    strcat(result," ");
+    strcat(result,pr->time);
+    strcat(result," ");
+    char line[3];
     sprintf(line,"%d",pr->lineNumber);
     strcat(result,line);
 }

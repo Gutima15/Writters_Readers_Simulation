@@ -3,10 +3,15 @@
 #include<string.h>
 #include<time.h>
 #include<unistd.h>
+#include<semaphore.h>
 #include "shared_memory.h" 
-#define FILE "sharedWriterQueue.c"
+#define FILEW "sharedWriterQueue.c"
 
-node *writer_queue =NULL;
+node* writer_queue =NULL;
+
+sem_t* semSpy;
+sem_t* semWR;
+
 
 int validateAnswer(int answer){
     if(answer == 1){
@@ -31,23 +36,21 @@ void writerExecution(struct userParameters* up){
         time_t seconds = exTime;
 
         endWait = start + seconds;
-        //11/11/1121
-        //PID,"writer","write","wt",0,"          ","     "
-        //wait (sspy)
+        //PID,"writer","write","bl",0,"          ","     "
+        sem_wait(semSpy);
         struct process *p= get_by_index(&writer_queue, up->index);
-        char result = "";
+        char result [360];
         queueToString(writer_queue, result);
         strncpy(up->spyBlock, result, BLOCK_SIZE);
-        //Signal(sspy)
+        sem_post(semSpy);
 
         while(start < endWait){
-            strcpy(p->state,"bl");
             time_t t = time(NULL);
             struct tm tm = *localtime(&t);
             //Date modification
-            char date = (char *) malloc(sizeof(char));
+            char* date = (char *) malloc(sizeof(char));
             bzero(date,sizeof(date));
-            char s= (char *) malloc(sizeof(char));            
+            char* s= (char *) malloc(sizeof(char));            
             bzero(s,sizeof(s));
             sprintf(s,"%02d",(tm.tm_mday));
             strcat(date,s);
@@ -59,7 +62,7 @@ void writerExecution(struct userParameters* up){
             strcat(date,s);
             strcpy(p->date,date);
             //Hour modification
-            char hour = (char *) malloc(sizeof(char));
+            char* hour = (char *) malloc(sizeof(char));
             bzero(hour,sizeof(hour));
             sprintf(s,"%02d",(tm.tm_hour));
             strcat(hour,s);
@@ -67,34 +70,53 @@ void writerExecution(struct userParameters* up){
             sprintf(s,"%02d",(tm.tm_min));
             strcat(hour,s);
             strcpy(p->time,hour);
-            //wait del semaforo.//
-            strcpy(p->state,"ex");
-            // ¿cómo lo ponemos en la memoria compartida del writer?
+            sem_wait(semWR);
             /*lógica de escritura*/
             int emptyLine = getEmptyLine(up->memoryBlock);
             if(emptyLine != -1){
-                //obtenemos fecha
-                char proceso = (char *) malloc(sizeof(char));
+                strcpy(p->state,"ex");
+                sem_wait(semSpy);
+                char result2 [360];
+                queueToString(writer_queue, result2);
+                strncpy(up->spyBlock, result2, BLOCK_SIZE);
+                sem_post(semSpy);
+
+                char* proceso = (char *) malloc(sizeof(char));
                 bzero(proceso,sizeof(proceso));
-                processToString(p,proceso);
+                processToLine(p,proceso);
                 writeLine(proceso,emptyLine,up->memoryBlock);
                 //Escribe en bitácora
+                FILE *fp;
+	            fp = fopen("bitacora.txt", "a");
+                if(fp == NULL){
+                    printf("Error(open): %s\n", "bitacora.txt");        
+                    exit(EXIT_FAILURE);
+                }
+                char bitacoraProcess[40];
+                processToString(p,bitacoraProcess);
+                fputs(bitacoraProcess, fp);
+                fclose(fp);
+                
             }else{
+                sem_post(semWR);
                 break;
             }
-            /*Fin de escritura*/
-            //signal de semaforo.
+            sem_post(semWR);        
             sleep(1);
             start = time(NULL);
-        }
+        }        
+        strcpy(p->state,"sl");
+        sem_wait(semSpy);
+        char result3 [360];
+        queueToString(writer_queue, result3);
+        strncpy(up->spyBlock, result3, BLOCK_SIZE);
+        sem_post(semSpy);
         sleep(up->sleepTime);
-        
-        // se manda a dormir... los segundos del usuario
     }
 }
-int main (){
 
-    //Grab the size of the shared memory
+int main (){
+        //Grab the size of the shared memory
     char *mblock = attach_memory_block(MEMORYFILE, BLOCK_SIZE);
     if(mblock == NULL){
         printf("Error: could not get the Memory block\n");
@@ -113,7 +135,6 @@ int main (){
     //Ask the number of writers from the user
     char cantWritters[2];
     int answerCantW = getLine("Write the number of [Writers] to start the program (MAX 9):",cantWritters,sizeof(cantWritters));
-    printf("value of: %s",cantWritters);
     if(validateAnswer(answerCantW) != 0){
         return -1;
     }
@@ -145,20 +166,34 @@ int main (){
         strcat(PID,num);
         //bl, sl, ex, wt
         //PID, Type, action, state, lineNumber, date, time
-        struct process pn = {PID,"writer","write","wt",0,"          ","     "};        
+        struct process pn = {PID,"writer","write","bl",0,"          ","     "};        
         writer_queue = push(writer_queue,pn);        
     }
     
     //Se ininicializa la memoria compartida con el espía.
-    char *spyBlock = attach_memory_block(FILE, BLOCK_SIZE);
+    char *spyBlock = attach_memory_block(FILEW, BLOCK_SIZE);
     if(spyBlock == NULL){
         printf("Error: could not get the block\n");
         return -1;
     }
-        // Crear la función que usarán los threads.
-    //Esta recibe como parámetro la cola
-    // Detro de ella usamos writeLine y como implica acceso a memoria compartida, se usa el semáforo.
+    /**Sem*/
 
+    //sem_unlink(SPYSEM);
+    //sem_unlink(WRSEM);
+
+    semSpy = sem_open(SPYSEM,IPC_CREAT,0660,1);
+    if(semSpy == SEM_FAILED){
+        perror("sem_open/semspy");
+        exit(EXIT_FAILURE);
+    }
+
+    semWR = sem_open(WRSEM,IPC_CREAT,0660,1);
+    if(semWR == SEM_FAILED){
+        perror("sem_open/semWR");
+        exit(EXIT_FAILURE);
+    }
+
+    /**Sem*/
 
     /*************/
     struct userParameters upList[cantProcess];
@@ -185,5 +220,6 @@ int main (){
     return 0;
     //writes to a block of shared memory
 }
+
 
 

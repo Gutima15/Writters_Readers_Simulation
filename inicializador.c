@@ -49,7 +49,7 @@ int main (){
         return -1;
     }
     for(int i = 0; i<size; i++){
-        char character[1];
+        char character[3];
         strcpy(character,"_");
         if((i+1)%22 == 0 && i>0){
             printf("indice del enter: %d\n",i);
