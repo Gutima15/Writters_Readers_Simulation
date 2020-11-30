@@ -40,6 +40,7 @@ int main (int argc, char* argv[]){
     
     sem_unlink(SPYSEM);
     sem_unlink(WRSEM);
+    sem_unlink(SEMMUTEX);
     return 0;
     
 }
