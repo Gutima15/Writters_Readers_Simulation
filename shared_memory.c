@@ -133,7 +133,7 @@ void queueToString(node * head, char* result){
             strcat(result," ");
             strcat(result,current->val->state);
             strcat(result," ");
-            char line[2];
+            char line[3];
             sprintf(line,"%d",current->val->lineNumber);
             strcat(result,line);
             strcat(result," ");
@@ -153,8 +153,8 @@ void processToLine(struct process *pr, char* result ){
     strcat(result," ");
     strcat(result,pr->time);
     strcat(result," ");
-    char* line= "";
-    sprintf(line,"%d",pr->lineNumber);
+    char line[3];
+    sprintf(line,"%d",pr->lineNumber);    
     strcat(result,line);
 }
 
@@ -189,11 +189,11 @@ node* push(node * head, struct process val) {
         bzero(head->val, sizeof(head->val));
         head->val->PID = val.PID;
         head->val->Type = val.Type;
-        head->val->action = val.action;
-        head->val->state = val.state;
+        head->val->action = val.action;        
+        strcpy(head->val->state, val.state);
         head->val->lineNumber = val.lineNumber;
-        head->val->date = val.date;
-        head->val->time = val.time;
+        strcpy(head->val->date,val.date);
+        strcpy(head->val->time,val.time);
         head->next = NULL;        
     } else{
         node * current = head;
@@ -207,11 +207,11 @@ node* push(node * head, struct process val) {
         bzero(current->next->val, sizeof(current->next->val));
         current->next->val->PID = val.PID;
         current->next->val->Type = val.Type;
-        current->next->val->action = val.action;
-        current->next->val->state = val.state;
+        current->next->val->action = val.action;        
+        strcpy(current->next->val->state, val.state);
         current->next->val->lineNumber = val.lineNumber;
-        current->next->val->date = val.date;
-        current->next->val->time = val.time;
+        strcpy(current->next->val->date, val.date);
+        strcpy(current->next->val->time, val.time);        
         current->next->next = NULL;
     }
     return head;

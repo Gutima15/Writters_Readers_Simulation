@@ -16,10 +16,10 @@ struct process{
     char* PID;
     char* Type;
     char* action;
-    char* state;
+    char state[3];
     int lineNumber;
-    char* date;
-    char* time;
+    char date[11];
+    char time[6];
 };
 
 struct userParameters{

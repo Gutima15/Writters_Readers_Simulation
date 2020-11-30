@@ -4,6 +4,9 @@
 #include<time.h>
 #include<unistd.h>
 #include<semaphore.h>
+#include <errno.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include "shared_memory.h" 
 #define FILEW "sharedWriterQueue.c"
 
@@ -26,65 +29,73 @@ int validateAnswer(int answer){
 }
 
 void writerExecution(struct userParameters* up){
+    struct process *p= get_by_index(&writer_queue, up->index);
     while(true){
 
         int exTime = up->exTime;
         int sleepTime = up->sleepTime;
-
-        time_t endWait;
-        time_t start = time(NULL);
-        time_t seconds = exTime;
-
-        endWait = start + seconds;
+        int cont = 0;
         //PID,"writer","write","bl",0,"          ","     "
-        sem_wait(semSpy);
-        struct process *p= get_by_index(&writer_queue, up->index);
+
+        sem_wait(semSpy);        
         char result [360];
         queueToString(writer_queue, result);
         strncpy(up->spyBlock, result, BLOCK_SIZE);
+        bzero(result,sizeof(result));
         sem_post(semSpy);
 
-        while(start < endWait){
+        //printf("Luego del sem 50, index: %d\n",up->index);
+        sem_wait(semWR);
+        while(cont < exTime){                      
             time_t t = time(NULL);
             struct tm tm = *localtime(&t);
             //Date modification
-            char* date = (char *) malloc(sizeof(char));
-            bzero(date,sizeof(date));
-            char* s= (char *) malloc(sizeof(char));            
+            char date[11];            
+            char s[5];
             bzero(s,sizeof(s));
             sprintf(s,"%02d",(tm.tm_mday));
             strcat(date,s);
             strcat(date,"/");
+            bzero(s,sizeof(s));
             sprintf(s,"%02d",(tm.tm_mon+1));
             strcat(date,s);
             strcat(date,"/");
+            bzero(s,sizeof(s));
             sprintf(s,"%d",(tm.tm_year+1900));
             strcat(date,s);
-            strcpy(p->date,date);
+            strncpy(p->date,date,sizeof(p->date));     
+            bzero(date,sizeof(date));       
             //Hour modification
-            char* hour = (char *) malloc(sizeof(char));
+            bzero(s,sizeof(s));
+            char hour[6];
             bzero(hour,sizeof(hour));
             sprintf(s,"%02d",(tm.tm_hour));
             strcat(hour,s);
-            strcat(date,":");
+            strcat(hour,":");
+            bzero(s,sizeof(s));
             sprintf(s,"%02d",(tm.tm_min));
             strcat(hour,s);
-            strcpy(p->time,hour);
-            sem_wait(semWR);
+            strcpy(p->time,hour); 
+            bzero(s,sizeof(s));
+            bzero(hour,sizeof(hour));                       
             /*lógica de escritura*/
-            int emptyLine = getEmptyLine(up->memoryBlock);
+            int emptyLine = getEmptyLine(up->memoryBlock);              
             if(emptyLine != -1){
                 strcpy(p->state,"ex");
+                p->lineNumber = emptyLine;                
                 sem_wait(semSpy);
                 char result2 [360];
-                queueToString(writer_queue, result2);
-                strncpy(up->spyBlock, result2, BLOCK_SIZE);
+                queueToString(writer_queue, result2);                
+                strncpy(up->spyBlock, result2, BLOCK_SIZE);   
+                bzero(result2,sizeof(result2));             
                 sem_post(semSpy);
 
-                char* proceso = (char *) malloc(sizeof(char));
-                bzero(proceso,sizeof(proceso));
-                processToLine(p,proceso);
+                char proceso[23];
+                bzero(proceso,sizeof(proceso));                
+                processToLine(p,proceso);   
+                puts("Writing...");
                 writeLine(proceso,emptyLine,up->memoryBlock);
+                bzero(proceso,sizeof(proceso));
                 //Escribe en bitácora
                 FILE *fp;
 	            fp = fopen("bitacora.txt", "a");
@@ -92,27 +103,44 @@ void writerExecution(struct userParameters* up){
                     printf("Error(open): %s\n", "bitacora.txt");        
                     exit(EXIT_FAILURE);
                 }
-                char bitacoraProcess[40];
+                char bitacoraProcess[40];                
+                bzero(bitacoraProcess,sizeof(bitacoraProcess));
                 processToString(p,bitacoraProcess);
+                strcat(bitacoraProcess,"\n");
                 fputs(bitacoraProcess, fp);
+                bzero(bitacoraProcess,sizeof(bitacoraProcess));
                 fclose(fp);
                 
             }else{
-                sem_post(semWR);
                 break;
-            }
-            sem_post(semWR);        
+            } 
+            cont++;
+            
             sleep(1);
-            start = time(NULL);
-        }        
+        }
+        puts("proceso terminado...");
+        sem_post(semWR);          
         strcpy(p->state,"sl");
         sem_wait(semSpy);
         char result3 [360];
         queueToString(writer_queue, result3);
         strncpy(up->spyBlock, result3, BLOCK_SIZE);
-        sem_post(semSpy);
+        bzero(result3,sizeof(result3));
+        sem_post(semSpy);        
         sleep(up->sleepTime);
+        
+        strcpy(p->state,"bl");
+        sem_wait(semSpy);
+        char result4 [360];
+        queueToString(writer_queue, result4);
+        strncpy(up->spyBlock, result4, BLOCK_SIZE);
+        bzero(result4,sizeof(result4));
+        sem_post(semSpy);
     }
+}
+
+void prueba(struct userParameters* up){
+    printf("indice: %d  exTime: %d  SlpTime: %d  dir1: %p  dir2: %p\n",up->index,up->exTime,up->sleepTime,&up->memoryBlock, &up->spyBlock);
 }
 
 int main (){
@@ -176,45 +204,34 @@ int main (){
         printf("Error: could not get the block\n");
         return -1;
     }
-    /**Sem*/
+    /**Sem setup*/
+    sem_unlink(SPYSEM);
+    sem_unlink(WRSEM);
 
-    //sem_unlink(SPYSEM);
-    //sem_unlink(WRSEM);
-
-    semSpy = sem_open(SPYSEM,IPC_CREAT,0660,1);
+    semSpy = sem_open(SPYSEM,O_CREAT,0660,1);
     if(semSpy == SEM_FAILED){
         perror("sem_open/semspy");
         exit(EXIT_FAILURE);
     }
 
-    semWR = sem_open(WRSEM,IPC_CREAT,0660,1);
+    semWR = sem_open(WRSEM,O_CREAT,0660,1);
     if(semWR == SEM_FAILED){
         perror("sem_open/semWR");
         exit(EXIT_FAILURE);
     }
 
-    /**Sem*/
-
-    /*************/
     struct userParameters upList[cantProcess];
     pthread_t threads[cantProcess];	
-    for(int i=0; i< cantProcess; i++){
+    for(int i=0; i< cantProcess; i++){        
         struct userParameters up = {block,spyBlock,atoi(cantWritingTime), atoi(cantSleep), i};
-        upList[i] = up;
-        pthread_create(&threads[i],NULL,writerExecution,upList[i]);				
+        upList[i] = up;    
+        pthread_create(&threads[i],NULL,writerExecution,&upList[i]);				
 	}    
 	for (int i = 0; i < cantProcess; i++){
         if (pthread_join(threads[i], NULL) != 0){
             fprintf(stderr, "error: Cannot join thread # %d\n", i);
         }
     }
-    /************/
-    
-
-    // writeLine(" 1 23/11/2020 12:36 0\n",0,block);
-    // writeLine(" 1 23/11/2020 12:36 0\n",3,block);
-    // writeLine(" 1 23/11/2020 12:36 0\n",5,block);
-
     detach_memory_block(block);
 
     return 0;
