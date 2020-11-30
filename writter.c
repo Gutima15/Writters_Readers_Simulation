@@ -106,7 +106,7 @@ void writerExecution(struct userParameters* up){
                 char bitacoraProcess[100];                
                 bzero(bitacoraProcess,sizeof(bitacoraProcess));
                 processToString(p,bitacoraProcess);
-                strcat(bitacoraProcess,"wrote: ");
+                strcat(bitacoraProcess," wrote: ");
                 strcat(bitacoraProcess,proceso);
                 bzero(proceso,sizeof(proceso));
                 strcat(bitacoraProcess,"\n");

@@ -102,7 +102,7 @@ void reExecution(struct userParameters* up){
                 char bitacoraProcess[40];                
                 bzero(bitacoraProcess,sizeof(bitacoraProcess));
                 processToString(p,bitacoraProcess);
-                strcat(bitacoraProcess,"read: ");
+                strcat(bitacoraProcess," read: ");
                 strcat(bitacoraProcess,proceso);
                 bzero(proceso,sizeof(proceso));
                 strcat(bitacoraProcess,"\n");
