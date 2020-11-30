@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<semaphore.h>
 
 #include "shared_memory.h"
 //Se encarga de matar todos los procesos que estén en escena. Devolver los 
@@ -26,6 +27,14 @@ int main (int argc, char* argv[]){
     }else{
         printf("could not destroy block: %s\n", "sharedWriterQueue.c");
     }
+    if(destroy_memory_block("sharedReaderQueue.c")){
+        printf("Destroyed block: %s\n", "sharedReaderQueue.c");
+    }else{
+        printf("could not destroy block: %s\n", "sharedReaderQueue.c");
+    }
+    
+    sem_unlink(SPYSEM);
+    sem_unlink(WRSEM);
     return 0;
     
 }

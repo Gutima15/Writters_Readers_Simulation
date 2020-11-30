@@ -28,6 +28,7 @@ struct userParameters{
     int exTime;
     int sleepTime;
     int index;
+    int memoryLines;
 };
 
 typedef struct node {
@@ -49,5 +50,6 @@ struct process *get_by_index(node ** head, int n);
 #define FILENAME "shareData.c" //File con el que asociamos la memoria...
 #define SPYSEM "/myspy"
 #define WRSEM "/mywritereader"
+#define SEMMUTEX "/myreadercount"
 //File made to simplify code 
 #endif

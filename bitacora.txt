@@ -1,56 +1,401 @@
-w0 write writer 29/11/2020 18:55 0
-w0 write writer 29/11/2020 18:55 1
-w0 write writer 29/11/2020 18:55 2
-w0 write writer 29/11/2020 18:55 3
-w1 write writer 29/11/2020 18:55 4
-w0 write writer 29/11/2020 18:55 5
-w0 write writer 29/11/2020 18:55 6
-w0 write writer 29/11/2020 18:55 7
-w0 write writer 29/11/2020 19:02 0
-w0 write writer 29/11/2020 19:02 1
-w0 write writer 29/11/2020 19:02 2
-w0 write writer 29/11/2020 19:02 3
-w1 write writer 29/11/2020 19:02 4
-w0 write writer 29/11/2020 19:02 5
-w0 write writer 29/11/2020 19:02 6
-w0 write writer 29/11/2020 19:02 7
-w1 write writer 29/11/2020 19:10 0
-w1 write writer 29/11/2020 19:10 1
-w1 write writer 29/11/2020 19:10 2
-w1 write writer 29/11/2020 19:10 3
-w1 write writer 29/11/2020 19:10 4
-w1 write writer 29/11/2020 19:10 5
-w1 write writer 29/11/2020 19:10 6
-w1 write writer 29/11/2020 19:10 7
-w0 write writer 29/11/2020 19:11 0
-w0 write writer 29/11/2020 19:11 1
-w0 write writer 29/11/2020 19:11 2
-w0 write writer 29/11/2020 19:11 3
-w0 write writer 29/11/2020 19:11 4
-w0 write writer 29/11/2020 19:11 5
-w0 write writer 29/11/2020 19:11 6
-w0 write writer 29/11/2020 19:11 7
-w0 write writer 29/11/2020 19:12 0
-w0 write writer 29/11/2020 19:12 1
-w0 write writer 29/11/2020 19:12 2
-w0 write writer 29/11/2020 19:12 3
-w1 write writer 29/11/2020 19:12 4
-w1 write writer 29/11/2020 19:12 5
-w1 write writer 29/11/2020 19:12 6
-w1 write writer 29/11/2020 19:12 7
-w0 write writer 29/11/2020 19:13 0
-w0 write writer 29/11/2020 19:13 1
-w0 write writer 29/11/2020 19:13 2
-w1 write writer 29/11/2020 19:13 3
-w1 write writer 29/11/2020 19:13 4
-w1 write writer 29/11/2020 19:13 5
-w0 write writer 29/11/2020 19:13 6
-w0 write writer 29/11/2020 19:13 7
-w0 write writer 29/11/2020 19:15 0
-w0 write writer 29/11/2020 19:15 1
-w0 write writer 29/11/2020 19:15 2
-w0 write writer 29/11/2020 19:15 3
-w0 write writer 29/11/2020 19:15 4
-w0 write writer 29/11/2020 19:15 5
-w1 write writer 29/11/2020 19:15 6
-w1 write writer 29/11/2020 19:15 7
+w0 write writer 29/11/2020 22:18 0wrote: w0 29/11/2020 22:18 0
+w0 write writer 29/11/2020 22:18 1wrote: w0 29/11/2020 22:18 1
+w1 write writer 29/11/2020 22:18 2wrote: w1 29/11/2020 22:18 2
+w1 write writer 29/11/2020 22:18 3wrote: w1 29/11/2020 22:18 3
+w2 write writer 29/11/2020 22:18 4wrote: w2 29/11/2020 22:18 4
+w2 write writer 29/11/2020 22:18 5wrote: w2 29/11/2020 22:18 5
+w0 write writer 29/11/2020 22:19 6wrote: w0 29/11/2020 22:19 6
+w0 write writer 29/11/2020 22:19 7wrote: w0 29/11/2020 22:19 7
+w0 write writer 29/11/2020 22:30 0wrote: w0 29/11/2020 22:30 0
+w0 write writer 29/11/2020 22:30 1wrote: w0 29/11/2020 22:30 1
+w0 write writer 29/11/2020 22:30 2wrote: w0 29/11/2020 22:30 2
+w1 write writer 29/11/2020 22:30 3wrote: w1 29/11/2020 22:30 3
+w1 write writer 29/11/2020 22:30 4wrote: w1 29/11/2020 22:30 4
+w1 write writer 29/11/2020 22:30 5wrote: w1 29/11/2020 22:30 5
+w0 write writer 29/11/2020 22:30 6wrote: w0 29/11/2020 22:30 6
+w0 write writer 29/11/2020 22:30 7wrote: w0 29/11/2020 22:30 7
+w0 write writer 29/11/2020 22:40 0wrote: w0 29/11/2020 22:40 0
+w0 write writer 29/11/2020 22:40 1wrote: w0 29/11/2020 22:40 1
+w0 write writer 29/11/2020 22:40 2wrote: w0 29/11/2020 22:40 2
+w1 write writer 29/11/2020 22:40 3wrote: w1 29/11/2020 22:40 3
+w1 write writer 29/11/2020 22:40 4wrote: w1 29/11/2020 22:40 4
+w1 write writer 29/11/2020 22:40 5wrote: w1 29/11/2020 22:40 5
+w0 write writer 29/11/2020 22:40 6wrote: w0 29/11/2020 22:40 6
+w0 write writer 29/11/2020 22:40 7wrote: w0 29/11/2020 22:40 7
+w0 write writer 29/11/2020 22:45 0wrote: w0 29/11/2020 22:45 0
+w0 write writer 29/11/2020 22:45 1wrote: w0 29/11/2020 22:45 1
+w1 write writer 29/11/2020 22:45 2wrote: w1 29/11/2020 22:45 2
+w1 write writer 29/11/2020 22:45 3wrote: w1 29/11/2020 22:45 3
+w3 write writer 29/11/2020 22:45 4wrote: w3 29/11/2020 22:45 4
+w3 write writer 29/11/2020 22:45 5wrote: w3 29/11/2020 22:45 5
+w2 write writer 29/11/2020 22:45 6wrote: w2 29/11/2020 22:45 6
+w2 write writer 29/11/2020 22:45 7wrote: w2 29/11/2020 22:45 7
+w0 write writer 29/11/2020 23:00 0wrote: w0 29/11/2020 23:00 0
+w0 write writer 29/11/2020 23:00 1wrote: w0 29/11/2020 23:00 1
+w0 write writer 29/11/2020 23:00 2wrote: w0 29/11/2020 23:00 2
+w1 write writer 29/11/2020 23:00 3wrote: w1 29/11/2020 23:00 3
+w1 write writer 29/11/2020 23:00 4wrote: w1 29/11/2020 23:00 4
+w1 write writer 29/11/2020 23:00 5wrote: w1 29/11/2020 23:00 5
+w0 write writer 29/11/2020 23:00 6wrote: w0 29/11/2020 23:00 6
+w0 write writer 29/11/2020 23:00 7wrote: w0 29/11/2020 23:00 7
+w0 write writer 29/11/2020 23:02 0wrote: w0 29/11/2020 23:02 0
+w0 write writer 29/11/2020 23:02 1wrote: w0 29/11/2020 23:02 1
+w0 write writer 29/11/2020 23:02 2wrote: w0 29/11/2020 23:02 2
+w0 write writer 29/11/2020 23:02 3wrote: w0 29/11/2020 23:02 3
+w1 write writer 29/11/2020 23:02 4wrote: w1 29/11/2020 23:02 4
+w1 write writer 29/11/2020 23:02 5wrote: w1 29/11/2020 23:02 5
+w1 write writer 29/11/2020 23:02 6wrote: w1 29/11/2020 23:02 6
+w1 write writer 29/11/2020 23:02 7wrote: w1 29/11/2020 23:02 7
+r1 read reader 29/11/2020 23:03 0read: w0 29/11/2020 23:02 0
+r1 read reader 29/11/2020 23:03 0read: w0 29/11/2020 23:02 0
+r1 read reader 29/11/2020 23:03 0read: w0 29/11/2020 23:02 0
+w0 write writer 29/11/2020 23:11 0wrote: w0 29/11/2020 23:11 0
+w0 write writer 29/11/2020 23:11 1wrote: w0 29/11/2020 23:11 1
+w0 write writer 29/11/2020 23:11 2wrote: w0 29/11/2020 23:11 2
+w1 write writer 29/11/2020 23:11 3wrote: w1 29/11/2020 23:11 3
+w1 write writer 29/11/2020 23:11 4wrote: w1 29/11/2020 23:11 4
+w1 write writer 29/11/2020 23:11 5wrote: w1 29/11/2020 23:11 5
+w0 write writer 29/11/2020 23:11 6wrote: w0 29/11/2020 23:11 6
+w0 write writer 29/11/2020 23:11 7wrote: w0 29/11/2020 23:11 7
+r0 read reader 29/11/2020 23:11 0read: w0 29/11/2020 23:11 0
+r0 read reader 29/11/2020 23:11 0read: w0 29/11/2020 23:11 0
+w1 write writer 29/11/2020 23:15 0wrote: w1 29/11/2020 23:15 0
+w1 write writer 29/11/2020 23:15 1wrote: w1 29/11/2020 23:15 1
+w1 write writer 29/11/2020 23:15 2wrote: w1 29/11/2020 23:15 2
+w2 write writer 29/11/2020 23:15 3wrote: w2 29/11/2020 23:15 3
+w2 write writer 29/11/2020 23:15 4wrote: w2 29/11/2020 23:15 4
+w2 write writer 29/11/2020 23:15 5wrote: w2 29/11/2020 23:15 5
+w4 write writer 29/11/2020 23:15 6wrote: w4 29/11/2020 23:15 6
+w4 write writer 29/11/2020 23:15 7wrote: w4 29/11/2020 23:15 7
+r1 read reader 29/11/2020 23:15 0read: w1 29/11/2020 23:15 0
+r1 read reader 29/11/2020 23:15 0read: w1 29/11/2020 23:15 0
+r1 read reader 29/11/2020 23:15 0read: w1 29/11/2020 23:15 0
+w0 write writer 29/11/2020 23:22 0wrote: w0 29/11/2020 23:22 0
+w0 write writer 29/11/2020 23:22 1wrote: w0 29/11/2020 23:22 1
+w0 write writer 29/11/2020 23:22 2wrote: w0 29/11/2020 23:22 2
+w1 write writer 29/11/2020 23:22 3wrote: w1 29/11/2020 23:22 3
+w1 write writer 29/11/2020 23:22 4wrote: w1 29/11/2020 23:22 4
+w1 write writer 29/11/2020 23:22 5wrote: w1 29/11/2020 23:22 5
+w0 write writer 29/11/2020 23:22 6wrote: w0 29/11/2020 23:22 6
+w0 write writer 29/11/2020 23:22 7wrote: w0 29/11/2020 23:22 7
+r0 read reader 29/11/2020 23:23 0read: w0 29/11/2020 23:22 0
+r0 read reader 29/11/2020 23:23 0read: w0 29/11/2020 23:22 0
+w0 write writer 29/11/2020 23:25 0wrote: w0 29/11/2020 23:25 0
+w0 write writer 29/11/2020 23:25 1wrote: w0 29/11/2020 23:25 1
+w0 write writer 29/11/2020 23:25 2wrote: w0 29/11/2020 23:25 2
+w1 write writer 29/11/2020 23:25 3wrote: w1 29/11/2020 23:25 3
+w1 write writer 29/11/2020 23:25 4wrote: w1 29/11/2020 23:25 4
+w1 write writer 29/11/2020 23:25 5wrote: w1 29/11/2020 23:25 5
+w0 write writer 29/11/2020 23:25 6wrote: w0 29/11/2020 23:25 6
+w0 write writer 29/11/2020 23:25 7wrote: w0 29/11/2020 23:25 7
+r0 read reader 29/11/2020 23:25 0read: w0 29/11/2020 23:25 0
+r0 read reader 29/11/2020 23:25 0read: w0 29/11/2020 23:25 0
+w0 write writer 29/11/2020 23:28 0wrote: w0 29/11/2020 23:28 0
+w0 write writer 29/11/2020 23:28 1wrote: w0 29/11/2020 23:28 1
+w0 write writer 29/11/2020 23:28 2wrote: w0 29/11/2020 23:28 2
+w1 write writer 29/11/2020 23:28 3wrote: w1 29/11/2020 23:28 3
+w1 write writer 29/11/2020 23:28 4wrote: w1 29/11/2020 23:28 4
+w1 write writer 29/11/2020 23:28 5wrote: w1 29/11/2020 23:28 5
+w0 write writer 29/11/2020 23:28 6wrote: w0 29/11/2020 23:28 6
+w0 write writer 29/11/2020 23:28 7wrote: w0 29/11/2020 23:28 7
+r0 read reader 29/11/2020 23:28 0read: w0 29/11/2020 23:28 0
+r0 read reader 29/11/2020 23:28 0read: w0 29/11/2020 23:28 0
+w0 write writer 29/11/2020 23:31 0wrote: w0 29/11/2020 23:31 0
+w0 write writer 29/11/2020 23:31 1wrote: w0 29/11/2020 23:31 1
+w0 write writer 29/11/2020 23:31 2wrote: w0 29/11/2020 23:31 2
+w1 write writer 29/11/2020 23:31 3wrote: w1 29/11/2020 23:31 3
+w1 write writer 29/11/2020 23:31 4wrote: w1 29/11/2020 23:31 4
+w1 write writer 29/11/2020 23:31 5wrote: w1 29/11/2020 23:31 5
+w0 write writer 29/11/2020 23:31 6wrote: w0 29/11/2020 23:31 6
+w0 write writer 29/11/2020 23:31 7wrote: w0 29/11/2020 23:31 7
+r0 read reader 29/11/2020 23:31 0read: w0 29/11/2020 23:31 0
+r0 read reader 29/11/2020 23:31 0read: w0 29/11/2020 23:31 0
+w0 write writer 29/11/2020 23:38 0wrote: w0 29/11/2020 23:38 0
+w0 write writer 29/11/2020 23:38 1wrote: w0 29/11/2020 23:38 1
+w0 write writer 29/11/2020 23:38 2wrote: w0 29/11/2020 23:38 2
+w1 write writer 29/11/2020 23:38 3wrote: w1 29/11/2020 23:38 3
+w1 write writer 29/11/2020 23:38 4wrote: w1 29/11/2020 23:38 4
+w1 write writer 29/11/2020 23:38 5wrote: w1 29/11/2020 23:38 5
+w0 write writer 29/11/2020 23:38 6wrote: w0 29/11/2020 23:38 6
+w0 write writer 29/11/2020 23:38 7wrote: w0 29/11/2020 23:38 7
+r0 read reader 29/11/2020 23:38 0read: w0 29/11/2020 23:38 0
+r0 read reader 29/11/2020 23:38 0read: w0 29/11/2020 23:38 0
+w0 write writer 29/11/2020 23:53 0wrote: w0 29/11/2020 23:53 0
+w0 write writer 29/11/2020 23:53 1wrote: w0 29/11/2020 23:53 1
+w1 write writer 29/11/2020 23:53 2wrote: w1 29/11/2020 23:53 2
+w1 write writer 29/11/2020 23:53 3wrote: w1 29/11/2020 23:53 3
+w0 write writer 29/11/2020 23:53 4wrote: w0 29/11/2020 23:53 4
+w0 write writer 29/11/2020 23:53 5wrote: w0 29/11/2020 23:53 5
+w1 write writer 29/11/2020 23:53 6wrote: w1 29/11/2020 23:53 6
+w1 write writer 29/11/2020 23:53 7wrote: w1 29/11/2020 23:53 7
+r0 read reader 29/11/2020 23:53 0read: w0 29/11/2020 23:53 0
+r0 read reader 29/11/2020 23:53 1read: w0 29/11/2020 23:53 1
+r0 read reader 29/11/2020 23:53 2read: w1 29/11/2020 23:53 2
+w0 write writer 30/11/2020 00:01 0wrote: w0 30/11/2020 00:01 0
+w0 write writer 30/11/2020 00:01 1wrote: w0 30/11/2020 00:01 1
+w1 write writer 30/11/2020 00:01 2wrote: w1 30/11/2020 00:01 2
+w1 write writer 30/11/2020 00:01 3wrote: w1 30/11/2020 00:01 3
+w0 write writer 30/11/2020 00:01 4wrote: w0 30/11/2020 00:01 4
+w0 write writer 30/11/2020 00:01 5wrote: w0 30/11/2020 00:01 5
+w1 write writer 30/11/2020 00:01 6wrote: w1 30/11/2020 00:01 6
+w1 write writer 30/11/2020 00:01 7wrote: w1 30/11/2020 00:01 7
+r0 read reader 30/11/2020 00:01 0read: w0 30/11/2020 00:01 0
+r0 read reader 30/11/2020 00:01 1read: w0 30/11/2020 00:01 1
+r0 read reader 30/11/2020 00:01 2read: w1 30/11/2020 00:01 2
+w0 write writer 30/11/2020 00:06 0wrote: w0 30/11/2020 00:06 0
+w0 write writer 30/11/2020 00:06 1wrote: w0 30/11/2020 00:06 1
+w1 write writer 30/11/2020 00:06 2wrote: w1 30/11/2020 00:06 2
+w1 write writer 30/11/2020 00:06 3wrote: w1 30/11/2020 00:06 3
+w0 write writer 30/11/2020 00:06 4wrote: w0 30/11/2020 00:06 4
+w0 write writer 30/11/2020 00:06 5wrote: w0 30/11/2020 00:06 5
+w1 write writer 30/11/2020 00:06 6wrote: w1 30/11/2020 00:06 6
+w1 write writer 30/11/2020 00:06 7wrote: w1 30/11/2020 00:06 7
+r0 read reader 30/11/2020 00:06 0read: w0 30/11/2020 00:06 0
+r0 read reader 30/11/2020 00:06 1read: w0 30/11/2020 00:06 1
+r0 read reader 30/11/2020 00:06 2read: w1 30/11/2020 00:06 2
+w0 write writer 30/11/2020 00:08 0wrote: w0 30/11/2020 00:08 0
+w0 write writer 30/11/2020 00:08 1wrote: w0 30/11/2020 00:08 1
+w1 write writer 30/11/2020 00:08 2wrote: w1 30/11/2020 00:08 2
+w1 write writer 30/11/2020 00:08 3wrote: w1 30/11/2020 00:08 3
+w0 write writer 30/11/2020 00:08 4wrote: w0 30/11/2020 00:08 4
+w0 write writer 30/11/2020 00:08 5wrote: w0 30/11/2020 00:08 5
+w1 write writer 30/11/2020 00:09 6wrote: w1 30/11/2020 00:09 6
+w1 write writer 30/11/2020 00:09 7wrote: w1 30/11/2020 00:09 7
+r0 read reader 30/11/2020 00:09 0read: w0 30/11/2020 00:08 0
+r0 read reader 30/11/2020 00:09 1read: w0 30/11/2020 00:08 1
+r0 read reader 30/11/2020 00:09 2read: w1 30/11/2020 00:08 2
+w0 write writer 30/11/2020 00:11 0wrote: w0 30/11/2020 00:11 0
+w0 write writer 30/11/2020 00:11 1wrote: w0 30/11/2020 00:11 1
+w1 write writer 30/11/2020 00:11 2wrote: w1 30/11/2020 00:11 2
+w1 write writer 30/11/2020 00:11 3wrote: w1 30/11/2020 00:11 3
+w0 write writer 30/11/2020 00:11 4wrote: w0 30/11/2020 00:11 4
+w0 write writer 30/11/2020 00:11 5wrote: w0 30/11/2020 00:11 5
+w1 write writer 30/11/2020 00:11 6wrote: w1 30/11/2020 00:11 6
+w1 write writer 30/11/2020 00:11 7wrote: w1 30/11/2020 00:11 7
+r0 read reader 30/11/2020 00:11 0read: w0 30/11/2020 00:11 0
+r0 read reader 30/11/2020 00:11 1read: w0 30/11/2020 00:11 1
+r0 read reader 30/11/2020 00:11 2read: w1 30/11/2020 00:11 2
+r0 read reader 30/11/2020 00:11 3read: w1 30/11/2020 00:11 3
+r0 read reader 30/11/2020 00:11 4read: w0 30/11/2020 00:11 4
+r0 read reader 30/11/2020 00:11 5read: w0 30/11/2020 00:11 5
+r0 read reader 30/11/2020 00:11 6read: w1 30/11/2020 00:11 6
+r0 read reader 30/11/2020 00:11 7read: w1 30/11/2020 00:11 7
+r0 read reader 30/11/2020 00:11 8read: 
+r0 read reader 30/11/2020 00:11 0read: w0 30/11/2020 00:11 0
+r0 read reader 30/11/2020 00:11 1read: w0 30/11/2020 00:11 1
+r0 read reader 30/11/2020 00:11 2read: w1 30/11/2020 00:11 2
+r0 read reader 30/11/2020 00:11 3read: w1 30/11/2020 00:11 3
+r0 read reader 30/11/2020 00:11 4read: w0 30/11/2020 00:11 4
+r0 read reader 30/11/2020 00:11 5read: w0 30/11/2020 00:11 5
+r0 read reader 30/11/2020 00:12 6read: w1 30/11/2020 00:11 6
+r0 read reader 30/11/2020 00:12 7read: w1 30/11/2020 00:11 7
+r0 read reader 30/11/2020 00:12 8read: 
+r0 read reader 30/11/2020 00:12 0read: w0 30/11/2020 00:11 0
+r0 read reader 30/11/2020 00:12 1read: w0 30/11/2020 00:11 1
+r0 read reader 30/11/2020 00:12 2read: w1 30/11/2020 00:11 2
+r0 read reader 30/11/2020 00:12 3read: w1 30/11/2020 00:11 3
+r0 read reader 30/11/2020 00:12 4read: w0 30/11/2020 00:11 4
+r0 read reader 30/11/2020 00:12 5read: w0 30/11/2020 00:11 5
+r0 read reader 30/11/2020 00:12 6read: w1 30/11/2020 00:11 6
+r0 read reader 30/11/2020 00:12 7read: w1 30/11/2020 00:11 7
+r0 read reader 30/11/2020 00:12 8read: 
+r0 read reader 30/11/2020 00:12 0read: w0 30/11/2020 00:11 0
+r0 read reader 30/11/2020 00:12 1read: w0 30/11/2020 00:11 1
+r0 read reader 30/11/2020 00:12 2read: w1 30/11/2020 00:11 2
+r0 read reader 30/11/2020 00:12 3read: w1 30/11/2020 00:11 3
+r0 read reader 30/11/2020 00:12 4read: w0 30/11/2020 00:11 4
+r0 read reader 30/11/2020 00:12 5read: w0 30/11/2020 00:11 5
+r0 read reader 30/11/2020 00:12 6read: w1 30/11/2020 00:11 6
+r0 read reader 30/11/2020 00:12 7read: w1 30/11/2020 00:11 7
+r0 read reader 30/11/2020 00:12 8read: 
+r0 read reader 30/11/2020 00:12 0read: w0 30/11/2020 00:11 0
+w0 write writer 30/11/2020 00:22 0wrote: w0 30/11/2020 00:22 0
+w0 write writer 30/11/2020 00:22 1wrote: w0 30/11/2020 00:22 1
+w1 write writer 30/11/2020 00:22 2wrote: w1 30/11/2020 00:22 2
+w1 write writer 30/11/2020 00:22 3wrote: w1 30/11/2020 00:22 3
+w0 write writer 30/11/2020 00:22 4wrote: w0 30/11/2020 00:22 4
+w0 write writer 30/11/2020 00:22 5wrote: w0 30/11/2020 00:22 5
+w1 write writer 30/11/2020 00:22 6wrote: w1 30/11/2020 00:22 6
+w1 write writer 30/11/2020 00:22 7wrote: w1 30/11/2020 00:22 7
+r0 read reader 30/11/2020 00:22 0read: w0 30/11/2020 00:22 0
+r0 read reader 30/11/2020 00:22 1read: w0 30/11/2020 00:22 1
+r0 read reader 30/11/2020 00:22 2read: w1 30/11/2020 00:22 2
+r1 read reader 30/11/2020 00:22 0read: w0 30/11/2020 00:22 0
+r1 read reader 30/11/2020 00:22 1read: w0 30/11/2020 00:22 1
+r1 read reader 30/11/2020 00:22 2read: w1 30/11/2020 00:22 2
+r0 read reader 30/11/2020 00:22 3read: w1 30/11/2020 00:22 3
+r0 read reader 30/11/2020 00:22 4read: w0 30/11/2020 00:22 4
+r0 read reader 30/11/2020 00:22 5read: w0 30/11/2020 00:22 5
+r1 read reader 30/11/2020 00:22 3read: w1 30/11/2020 00:22 3
+r1 read reader 30/11/2020 00:22 4read: w0 30/11/2020 00:22 4
+r1 read reader 30/11/2020 00:22 5read: w0 30/11/2020 00:22 5
+r0 read reader 30/11/2020 00:22 6read: w1 30/11/2020 00:22 6
+r0 read reader 30/11/2020 00:22 7read: w1 30/11/2020 00:22 7
+r0 read reader 30/11/2020 00:22 8read: 
+r1 read reader 30/11/2020 00:23 6read: w1 30/11/2020 00:22 6
+r1 read reader 30/11/2020 00:23 7read: w1 30/11/2020 00:22 7
+r1 read reader 30/11/2020 00:23 8read: 
+r0 read reader 30/11/2020 00:23 0read: w0 30/11/2020 00:22 0
+r0 read reader 30/11/2020 00:23 1read: w0 30/11/2020 00:22 1
+r0 read reader 30/11/2020 00:23 2read: w1 30/11/2020 00:22 2
+r1 read reader 30/11/2020 00:23 0read: w0 30/11/2020 00:22 0
+r1 read reader 30/11/2020 00:23 1read: w0 30/11/2020 00:22 1
+r1 read reader 30/11/2020 00:23 2read: w1 30/11/2020 00:22 2
+r0 read reader 30/11/2020 00:23 3read: w1 30/11/2020 00:22 3
+r0 read reader 30/11/2020 00:23 4read: w0 30/11/2020 00:22 4
+r0 read reader 30/11/2020 00:23 5read: w0 30/11/2020 00:22 5
+r1 read reader 30/11/2020 00:23 3read: w1 30/11/2020 00:22 3
+r1 read reader 30/11/2020 00:23 4read: w0 30/11/2020 00:22 4
+r1 read reader 30/11/2020 00:23 5read: w0 30/11/2020 00:22 5
+r0 read reader 30/11/2020 00:23 6read: w1 30/11/2020 00:22 6
+r0 read reader 30/11/2020 00:23 7read: w1 30/11/2020 00:22 7
+r0 read reader 30/11/2020 00:23 8read: 
+r1 read reader 30/11/2020 00:23 6read: w1 30/11/2020 00:22 6
+r1 read reader 30/11/2020 00:23 7read: w1 30/11/2020 00:22 7
+r1 read reader 30/11/2020 00:23 8read: 
+r0 read reader 30/11/2020 00:23 0read: w0 30/11/2020 00:22 0
+r0 read reader 30/11/2020 00:23 1read: w0 30/11/2020 00:22 1
+r0 read reader 30/11/2020 00:23 2read: w1 30/11/2020 00:22 2
+r1 read reader 30/11/2020 00:23 0read: w0 30/11/2020 00:22 0
+r1 read reader 30/11/2020 00:23 1read: w0 30/11/2020 00:22 1
+r1 read reader 30/11/2020 00:23 2read: w1 30/11/2020 00:22 2
+r0 read reader 30/11/2020 00:23 3read: w1 30/11/2020 00:22 3
+r0 read reader 30/11/2020 00:23 4read: w0 30/11/2020 00:22 4
+r0 read reader 30/11/2020 00:23 5read: w0 30/11/2020 00:22 5
+r1 read reader 30/11/2020 00:23 3read: w1 30/11/2020 00:22 3
+r1 read reader 30/11/2020 00:23 4read: w0 30/11/2020 00:22 4
+r1 read reader 30/11/2020 00:23 5read: w0 30/11/2020 00:22 5
+r0 read reader 30/11/2020 00:23 6read: w1 30/11/2020 00:22 6
+r0 read reader 30/11/2020 00:23 7read: w1 30/11/2020 00:22 7
+r0 read reader 30/11/2020 00:23 8read: 
+r1 read reader 30/11/2020 00:23 6read: w1 30/11/2020 00:22 6
+r1 read reader 30/11/2020 00:23 7read: w1 30/11/2020 00:22 7
+r1 read reader 30/11/2020 00:23 8read: 
+r0 read reader 30/11/2020 00:23 0read: w0 30/11/2020 00:22 0
+r0 read reader 30/11/2020 00:23 1read: w0 30/11/2020 00:22 1
+r0 read reader 30/11/2020 00:23 2read: w1 30/11/2020 00:22 2
+r1 read reader 30/11/2020 00:23 0read: w0 30/11/2020 00:22 0
+r1 read reader 30/11/2020 00:23 1read: w0 30/11/2020 00:22 1
+r1 read reader 30/11/2020 00:23 2read: w1 30/11/2020 00:22 2
+r0 read reader 30/11/2020 00:23 3read: w1 30/11/2020 00:22 3
+r0 read reader 30/11/2020 00:23 4read: w0 30/11/2020 00:22 4
+r0 read reader 30/11/2020 00:23 5read: w0 30/11/2020 00:22 5
+r1 read reader 30/11/2020 00:23 3read: w1 30/11/2020 00:22 3
+r1 read reader 30/11/2020 00:23 4read: w0 30/11/2020 00:22 4
+r1 read reader 30/11/2020 00:23 5read: w0 30/11/2020 00:22 5
+r0 read reader 30/11/2020 00:23 6read: w1 30/11/2020 00:22 6
+r0 read reader 30/11/2020 00:23 7read: w1 30/11/2020 00:22 7
+r0 read reader 30/11/2020 00:23 8read: 
+r1 read reader 30/11/2020 00:23 6read: w1 30/11/2020 00:22 6
+r1 read reader 30/11/2020 00:23 7read: w1 30/11/2020 00:22 7
+r1 read reader 30/11/2020 00:23 8read: 
+r0 read reader 30/11/2020 00:23 0read: w0 30/11/2020 00:22 0
+r0 read reader 30/11/2020 00:23 1read: w0 30/11/2020 00:22 1
+r0 read reader 30/11/2020 00:23 2read: w1 30/11/2020 00:22 2
+r1 read reader 30/11/2020 00:24 0read: w0 30/11/2020 00:22 0
+r1 read reader 30/11/2020 00:24 1read: w0 30/11/2020 00:22 1
+r1 read reader 30/11/2020 00:24 2read: w1 30/11/2020 00:22 2
+r0 read reader 30/11/2020 00:24 3read: w1 30/11/2020 00:22 3
+r0 read reader 30/11/2020 00:24 4read: w0 30/11/2020 00:22 4
+r0 read reader 30/11/2020 00:24 5read: w0 30/11/2020 00:22 5
+r1 read reader 30/11/2020 00:24 3read: w1 30/11/2020 00:22 3
+r1 read reader 30/11/2020 00:24 4read: w0 30/11/2020 00:22 4
+r1 read reader 30/11/2020 00:24 5read: w0 30/11/2020 00:22 5
+r0 read reader 30/11/2020 00:24 6read: w1 30/11/2020 00:22 6
+r0 read reader 30/11/2020 00:24 7read: w1 30/11/2020 00:22 7
+r0 read reader 30/11/2020 00:24 8read: 
+r1 read reader 30/11/2020 00:24 6read: w1 30/11/2020 00:22 6
+r1 read reader 30/11/2020 00:24 7read: w1 30/11/2020 00:22 7
+r1 read reader 30/11/2020 00:24 8read: 
+r0 read reader 30/11/2020 00:24 0read: w0 30/11/2020 00:22 0
+r0 read reader 30/11/2020 00:24 1read: w0 30/11/2020 00:22 1
+r0 read reader 30/11/2020 00:24 2read: w1 30/11/2020 00:22 2
+r1 read reader 30/11/2020 00:24 0read: w0 30/11/2020 00:22 0
+r1 read reader 30/11/2020 00:24 1read: w0 30/11/2020 00:22 1
+r1 read reader 30/11/2020 00:24 2read: w1 30/11/2020 00:22 2
+r0 read reader 30/11/2020 00:24 3read: w1 30/11/2020 00:22 3
+r0 read reader 30/11/2020 00:24 4read: w0 30/11/2020 00:22 4
+r0 read reader 30/11/2020 00:24 5read: w0 30/11/2020 00:22 5
+r1 read reader 30/11/2020 00:24 3read: w1 30/11/2020 00:22 3
+r1 read reader 30/11/2020 00:24 4read: w0 30/11/2020 00:22 4
+r1 read reader 30/11/2020 00:24 5read: w0 30/11/2020 00:22 5
+r0 read reader 30/11/2020 00:24 6read: w1 30/11/2020 00:22 6
+r0 read reader 30/11/2020 00:24 7read: w1 30/11/2020 00:22 7
+r0 read reader 30/11/2020 00:24 8read: 
+r1 read reader 30/11/2020 00:24 6read: w1 30/11/2020 00:22 6
+r1 read reader 30/11/2020 00:24 7read: w1 30/11/2020 00:22 7
+r1 read reader 30/11/2020 00:24 8read: 
+r0 read reader 30/11/2020 00:24 0read: w0 30/11/2020 00:22 0
+r0 read reader 30/11/2020 00:24 1read: w0 30/11/2020 00:22 1
+r0 read reader 30/11/2020 00:24 2read: w1 30/11/2020 00:22 2
+r1 read reader 30/11/2020 00:24 0read: w0 30/11/2020 00:22 0
+r1 read reader 30/11/2020 00:24 1read: w0 30/11/2020 00:22 1
+r1 read reader 30/11/2020 00:24 2read: w1 30/11/2020 00:22 2
+r0 read reader 30/11/2020 00:24 3read: w1 30/11/2020 00:22 3
+r0 read reader 30/11/2020 00:24 4read: w0 30/11/2020 00:22 4
+r0 read reader 30/11/2020 00:24 5read: w0 30/11/2020 00:22 5
+r1 read reader 30/11/2020 00:24 3read: w1 30/11/2020 00:22 3
+r1 read reader 30/11/2020 00:24 4read: w0 30/11/2020 00:22 4
+r1 read reader 30/11/2020 00:24 5read: w0 30/11/2020 00:22 5
+r0 read reader 30/11/2020 00:24 6read: w1 30/11/2020 00:22 6
+r0 read reader 30/11/2020 00:24 7read: w1 30/11/2020 00:22 7
+r0 read reader 30/11/2020 00:24 8read: 
+r1 read reader 30/11/2020 00:24 6read: w1 30/11/2020 00:22 6
+r1 read reader 30/11/2020 00:24 7read: w1 30/11/2020 00:22 7
+r1 read reader 30/11/2020 00:24 8read: 
+r0 read reader 30/11/2020 00:24 0read: w0 30/11/2020 00:22 0
+r0 read reader 30/11/2020 00:24 1read: w0 30/11/2020 00:22 1
+w0 write writer 30/11/2020 00:30 0wrote: w0 30/11/2020 00:30 0
+w0 write writer 30/11/2020 00:30 1wrote: w0 30/11/2020 00:30 1
+w1 write writer 30/11/2020 00:30 2wrote: w1 30/11/2020 00:30 2
+w1 write writer 30/11/2020 00:30 3wrote: w1 30/11/2020 00:30 3
+w0 write writer 30/11/2020 00:30 4wrote: w0 30/11/2020 00:30 4
+w0 write writer 30/11/2020 00:30 5wrote: w0 30/11/2020 00:30 5
+w1 write writer 30/11/2020 00:30 6wrote: w1 30/11/2020 00:30 6
+w1 write writer 30/11/2020 00:30 7wrote: w1 30/11/2020 00:30 7
+w0 write writer 30/11/2020 00:32 0wrote: w0 30/11/2020 00:32 0
+w0 write writer 30/11/2020 00:32 1wrote: w0 30/11/2020 00:32 1
+w1 write writer 30/11/2020 00:32 2wrote: w1 30/11/2020 00:32 2
+w1 write writer 30/11/2020 00:32 3wrote: w1 30/11/2020 00:32 3
+w0 write writer 30/11/2020 00:32 4wrote: w0 30/11/2020 00:32 4
+w0 write writer 30/11/2020 00:32 5wrote: w0 30/11/2020 00:32 5
+w1 write writer 30/11/2020 00:32 6wrote: w1 30/11/2020 00:32 6
+w1 write writer 30/11/2020 00:32 7wrote: w1 30/11/2020 00:32 7
+w0 write writer 30/11/2020 00:32 0wrote: w0 30/11/2020 00:32 0
+w0 write writer 30/11/2020 00:32 1wrote: w0 30/11/2020 00:32 1
+w1 write writer 30/11/2020 00:32 2wrote: w1 30/11/2020 00:32 2
+w1 write writer 30/11/2020 00:32 3wrote: w1 30/11/2020 00:32 3
+w0 write writer 30/11/2020 00:32 4wrote: w0 30/11/2020 00:32 4
+w0 write writer 30/11/2020 00:32 5wrote: w0 30/11/2020 00:32 5
+w1 write writer 30/11/2020 00:32 6wrote: w1 30/11/2020 00:32 6
+w1 write writer 30/11/2020 00:33 7wrote: w1 30/11/2020 00:33 7
+r0 read reader 30/11/2020 00:34 0read: w0 30/11/2020 00:32 0
+r0 read reader 30/11/2020 00:34 1read: w0 30/11/2020 00:32 1
+r1 read reader 30/11/2020 00:34 0read: w0 30/11/2020 00:32 0
+r1 read reader 30/11/2020 00:34 1read: w0 30/11/2020 00:32 1
+r0 read reader 30/11/2020 00:34 2read: w1 30/11/2020 00:32 2
+r0 read reader 30/11/2020 00:34 3read: w1 30/11/2020 00:32 3
+r1 read reader 30/11/2020 00:34 2read: w1 30/11/2020 00:32 2
+r1 read reader 30/11/2020 00:34 3read: w1 30/11/2020 00:32 3
+r0 read reader 30/11/2020 00:34 4read: w0 30/11/2020 00:32 4
+r0 read reader 30/11/2020 00:34 5read: w0 30/11/2020 00:32 5
+r1 read reader 30/11/2020 00:34 4read: w0 30/11/2020 00:32 4
+r1 read reader 30/11/2020 00:34 5read: w0 30/11/2020 00:32 5
+r0 read reader 30/11/2020 00:34 6read: w1 30/11/2020 00:32 6
+r0 read reader 30/11/2020 00:34 7read: w1 30/11/2020 00:33 7
+r1 read reader 30/11/2020 00:34 6read: w1 30/11/2020 00:32 6
+r1 read reader 30/11/2020 00:34 7read: w1 30/11/2020 00:33 7
+r0 read reader 30/11/2020 00:34 8read: 
+r0 read reader 30/11/2020 00:34 9read: 
+r1 read reader 30/11/2020 00:34 8read: 
+r1 read reader 30/11/2020 00:34 9read: 
+r0 read reader 30/11/2020 00:34 0read: w0 30/11/2020 00:32 0
+r0 read reader 30/11/2020 00:34 1read: w0 30/11/2020 00:32 1
+r1 read reader 30/11/2020 00:34 0read: w0 30/11/2020 00:32 0
+r1 read reader 30/11/2020 00:34 1read: w0 30/11/2020 00:32 1
+r0 read reader 30/11/2020 00:34 2read: w1 30/11/2020 00:32 2
+r0 read reader 30/11/2020 00:34 3read: w1 30/11/2020 00:32 3
+r1 read reader 30/11/2020 00:34 2read: w1 30/11/2020 00:32 2
+r1 read reader 30/11/2020 00:34 3read: w1 30/11/2020 00:32 3
+r0 read reader 30/11/2020 00:34 4read: w0 30/11/2020 00:32 4
+r0 read reader 30/11/2020 00:35 5read: w0 30/11/2020 00:32 5

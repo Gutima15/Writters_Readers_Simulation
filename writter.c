@@ -30,6 +30,7 @@ int validateAnswer(int answer){
 
 void writerExecution(struct userParameters* up){
     struct process *p= get_by_index(&writer_queue, up->index);
+    int k=0;
     while(true){
 
         int exTime = up->exTime;
@@ -94,8 +95,7 @@ void writerExecution(struct userParameters* up){
                 bzero(proceso,sizeof(proceso));                
                 processToLine(p,proceso);   
                 puts("Writing...");
-                writeLine(proceso,emptyLine,up->memoryBlock);
-                bzero(proceso,sizeof(proceso));
+                writeLine(proceso,emptyLine,up->memoryBlock);            
                 //Escribe en bitácora
                 FILE *fp;
 	            fp = fopen("bitacora.txt", "a");
@@ -103,9 +103,12 @@ void writerExecution(struct userParameters* up){
                     printf("Error(open): %s\n", "bitacora.txt");        
                     exit(EXIT_FAILURE);
                 }
-                char bitacoraProcess[40];                
+                char bitacoraProcess[100];                
                 bzero(bitacoraProcess,sizeof(bitacoraProcess));
                 processToString(p,bitacoraProcess);
+                strcat(bitacoraProcess,"wrote: ");
+                strcat(bitacoraProcess,proceso);
+                bzero(proceso,sizeof(proceso));
                 strcat(bitacoraProcess,"\n");
                 fputs(bitacoraProcess, fp);
                 bzero(bitacoraProcess,sizeof(bitacoraProcess));
@@ -118,7 +121,8 @@ void writerExecution(struct userParameters* up){
             
             sleep(1);
         }
-        puts("proceso terminado...");
+        printf("proceso terminado...%d\n",k);    
+        k++;    
         sem_post(semWR);          
         strcpy(p->state,"sl");
         sem_wait(semSpy);
@@ -205,15 +209,17 @@ int main (){
         return -1;
     }
     /**Sem setup*/
-    sem_unlink(SPYSEM);
-    sem_unlink(WRSEM);
+
+    
+    //sem_unlink(SPYSEM);
+    //sem_unlink(WRSEM);
 
     semSpy = sem_open(SPYSEM,O_CREAT,0660,1);
     if(semSpy == SEM_FAILED){
         perror("sem_open/semspy");
         exit(EXIT_FAILURE);
     }
-
+    
     semWR = sem_open(WRSEM,O_CREAT,0660,1);
     if(semWR == SEM_FAILED){
         perror("sem_open/semWR");
@@ -223,7 +229,7 @@ int main (){
     struct userParameters upList[cantProcess];
     pthread_t threads[cantProcess];	
     for(int i=0; i< cantProcess; i++){        
-        struct userParameters up = {block,spyBlock,atoi(cantWritingTime), atoi(cantSleep), i};
+        struct userParameters up = {block,spyBlock,atoi(cantWritingTime), atoi(cantSleep), i, (size/22)};
         upList[i] = up;    
         pthread_create(&threads[i],NULL,writerExecution,&upList[i]);				
 	}    
@@ -233,10 +239,9 @@ int main (){
         }
     }
     detach_memory_block(block);
-
+    // sem_close(semWR);
+    // sem_close(semSpy);
+    
     return 0;
     //writes to a block of shared memory
 }
-
-
-
