@@ -32,6 +32,11 @@ int main (int argc, char* argv[]){
     }else{
         printf("could not destroy block: %s\n", "sharedReaderQueue.c");
     }
+    if(destroy_memory_block("sharedREQueue.c")){
+        printf("Destroyed block: %s\n", "sharedREQueue.c");
+    }else{
+        printf("could not destroy block: %s\n", "sharedREQueue.c");
+    }
     
     sem_unlink(SPYSEM);
     sem_unlink(WRSEM);
